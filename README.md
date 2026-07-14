@@ -1,51 +1,60 @@
-IPL Win Predictor
-A machine learning web app that predicts the win probability of a batting team during a live IPL T20 match, with explainability powered by SHAP.
+# 🏏 IPL Win Predictor
 
+An end-to-end machine learning application that predicts the **live win probability** of the batting team during an IPL T20 match. The project combines **XGBoost** for prediction with **SHAP explainability**, allowing users to understand the key factors influencing each prediction.
 
-#Tech Stack
+---
 
-Python
-XGBoost
-SHAP
-FastAPI
-Streamlit
+## 🚀 Features
 
-#Project Structure
-IPL Prediction/
+- Live win probability prediction for ongoing IPL matches
+- Built using an **XGBoost** classification model
+- **SHAP-based explainability** highlighting the top factors influencing each prediction
+- Input validation to prevent unrealistic match scenarios
+- Interactive Streamlit interface with a scoreboard-inspired design
+- FastAPI backend serving predictions through REST APIs
+
+---
+
+## 🛠️ Tech Stack
+
+- Python
+- XGBoost
+- SHAP
+- FastAPI
+- Streamlit
+- Pandas
+- NumPy
+- Joblib
+
+---
+
+## 📂 Project Structure
+
+```
+IPL-Win-Predictor/
+│
 ├── app/
-│   ├── api.py          # FastAPI backend
-│   └── streamlit_app.py  # Streamlit frontend
+│   ├── api.py               # FastAPI backend
+│   └── streamlit_app.py     # Streamlit frontend
+│
 ├── data/
 │   ├── matches.csv
 │   └── deliveries.csv
+│
 ├── notebooks/
-│   └── ipl.ipynb       # Model training notebook
-├── model.joblib        # Trained XGBoost model
-├── columns.joblib      # Feature columns
-└── requirements.txt
-How to Run
-1. Install dependencies
-bashpip install -r requirements.txt
-2. Start the FastAPI backend
-bashuvicorn app.api:app --reload
-3. Start the Streamlit frontend
-bashstreamlit run app/streamlit_app.py
-Open your browser at http://localhost:8501
-Features
+│   └── ipl.ipynb            # Model training notebook
+│
+├── model.joblib             # Trained XGBoost model
+├── columns.joblib           # Saved feature columns
+├── requirements.txt
+└── README.md
+```
 
-Predicts win probability based on live match state (score, balls left, wickets, target)
-Input validation to catch unrealistic match scenarios
-Top 3 SHAP factors shown per prediction, with actual feature values
-Dark scoreboard-style UI
+---
 
-#Model
-Trained on IPL match data using XGBoost. Features used:
+## ⚙️ Installation
 
-Batting team and bowling team
-City
-Current score
-Balls left
-Wickets lost
-Target
-Current run rate
-Required run rate
+Clone the repository:
+
+```bash
+git clone https://github.com/<your-username>/IPL-Win-Predictor
